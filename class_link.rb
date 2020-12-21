@@ -5,10 +5,17 @@ class Link < Post
   end
 
   def read_from_terminal
-    # to do
+    puts "The link address"
+    @url = STDIN.gets.chomp
+
+    puts
+    puts "The link description"
+    @text = STDIN.gets.chomp
   end
 
   def to_strings
-    # to do
+    time_string = "Created: #{@created_at.strftime("%d.%m.%Y, %H:%M:%S")} \n\r \n\r"
+
+    return [@url, @text, time_string]
   end
 end
